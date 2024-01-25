@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,11 +8,12 @@ public class Meteor : MonoBehaviour
     private bool IsGrounded;
     private bool IsCrashPlayer;
 
-    [SerializeField] private float speed = 5f;
+    private float speed;
     [SerializeField] private string targetTag = "Ground";
 
     private void Start()
     {
+        speed = Random.Range(5, 20);
         targetPoint = GameObject.FindGameObjectWithTag(targetTag).transform;
     }
 
