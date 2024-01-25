@@ -7,13 +7,10 @@ public class PickupShield : PickupItems
 {
     protected override void OnPickedUp(GameObject receiver)
     {
-        //throw new System.NotImplementedException();
+        gameObject.SetActive(true);
     }
 
-    private void Start()
-    {
-        //gameObject.SetActive(true);
-    }
+
 
 
 }

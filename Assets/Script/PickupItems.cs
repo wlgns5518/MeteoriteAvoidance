@@ -20,7 +20,7 @@ public abstract class PickupItems : MonoBehaviour
 
             if (destroyOnPickup)
             {
-
+                Destroy(gameObject);
             }
         }
     }
