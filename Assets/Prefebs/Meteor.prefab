@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3077934403646921265}
   - component: {fileID: 4943494681108100409}
   - component: {fileID: 7720410712797485209}
-  - component: {fileID: 3412798814796913663}
+  - component: {fileID: 1233850398583627543}
   m_Layer: 0
-  m_Name: Metro
+  m_Name: Meteor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,7 +97,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
---- !u!114 &3412798814796913663
+--- !u!114 &1233850398583627543
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74ffcfe7d96ac8d468b686934b50c738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
 --- !u!1 &7812819870698200728
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,14 +5,14 @@ using UnityEngine;
 public class GravityBody : MonoBehaviour
 {
     private GravityAttractor attractor;
-    protected bool isGrounded;
+    private bool isGrounded;
 
     private void Start()
     {
         attractor = FindObjectOfType<GravityAttractor>();
     }
 
-    protected virtual void Update()
+    private void Update()
     {
         attractor.Attract(GetComponent<Rigidbody2D>());     //지구의 중력에 계속 이끌리도록 적용하는 코드
 
