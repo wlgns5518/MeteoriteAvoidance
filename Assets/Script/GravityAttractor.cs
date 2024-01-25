@@ -30,5 +30,4 @@ public class GravityAttractor : MonoBehaviour
     {
         transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime); //È¸Àü
     }
-
 }

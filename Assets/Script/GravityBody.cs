@@ -16,8 +16,6 @@ public class GravityBody : MonoBehaviour
     {
         attractor.Attract(GetComponent<Rigidbody2D>());     //지구의 중력에 계속 이끌리도록 적용하는 코드
 
-
-
     }
     void OnCollisionEnter2D(Collision2D collision)    //지면에 닿았을 시 발동하는 코드
     {
