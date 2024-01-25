@@ -1,9 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject blueShieldItem; //쉴드아이템칸
+    public GameObject shield; //캐릭터에 부착한 쉴드칸
+
     private static GameManager instance = null;
+
+    [SerializeField] private int currentWaveIndex = 0;
+    private int currentSpawnCount = 0;
+    private int waveSpawnCount = 0;
+    private int waveSpawnPosCount = 0;
+
+    public float spawnInterval = .5f;
+
+    [SerializeField] private Transform spawnPositionsRoot;
+    private List<Transform> spawnPositions = new List<Transform>();
+
+
+
+
+    public List<GameObject> rewards = new List<GameObject>();
+
+
+
+
+
+
+
 
     void Awake()
     {
@@ -16,6 +43,14 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+
+        for (int i = 0; i < spawnPositionsRoot.childCount; i++) //오브젝트 호출위치 관련 함수
+        {
+            spawnPositions.Add(spawnPositionsRoot.GetChild(i));
+        }
+
+
     }
 
     //게임 매니저 인스턴스에 접근할 수 있는 프로퍼티. static이므로 다른 클래스에서 맘껏 호출할 수 있다.
@@ -30,12 +65,99 @@ public class GameManager : MonoBehaviour
             return instance;
         }
     }
-    public void Update()
+    public void Start()
     {
+        StartCoroutine("StartNextWave");
+
     }
+
 
     private void MakeMeteor()
     {
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+    IEnumerator StartNextWave() //시간별로 함수 및 함수에 관련된 오브젝트 호출
+    {
+        while(true)
+        {
+            if(currentSpawnCount == 0)
+            {
+                yield return new WaitForSeconds(2f);
+
+                if(currentWaveIndex % 10 == 0)
+                {
+                    waveSpawnPosCount = waveSpawnPosCount + 1 > spawnPositions.Count ? waveSpawnPosCount : waveSpawnPosCount + 1;
+                    waveSpawnCount = 0;
+                }
+
+                if (currentWaveIndex % 5 == 0)
+                {
+
+                }
+
+                if(currentWaveIndex % 3 == 0)
+                {
+                    waveSpawnCount += 1;
+                }
+
+
+                if (currentWaveIndex % 5 == 0)
+                {
+                    CreateShield();
+                }
+
+
+
+
+                for (int i = 0; i < waveSpawnCount; i++)
+                {
+                    int posIdx = Random.Range(0, spawnPositions.Count);
+                    for(int j = 0; j < waveSpawnCount; j++)
+                    {
+                        //int prefabIdx = Random.Range(0, blueshielditemPrefabs.Count);
+                        //GameObject blueshielditem = Instantiate(blueshielditemPrefabs[prefabIdx], spawnPositions[posIdx].position, Quaternion.identity);
+                        //currentSpawnCount++;
+                    }
+                }
+
+
+
+            }
+            yield return null;
+        }
+    }
+
+    
+
+
+    void CreateShield() //방패아이템 호출
+    {
+        int idx = Random.Range(0, rewards.Count);
+        int posIdx = Random.Range(0, spawnPositions.Count);
+
+        GameObject obj = rewards[idx];
+        Instantiate(obj, spawnPositions[posIdx].position, Quaternion.identity);
+    }
+
+
+    public void activeshield()
+    {
+        shield.SetActive(true);
+    }
+
+
+
+
 }
