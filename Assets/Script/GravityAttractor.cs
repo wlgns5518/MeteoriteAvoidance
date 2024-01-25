@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GravityAttractor : MonoBehaviour
 {
-    public float gravity = -10f; // 중력 상수
+    public float gravity = -20f; // 중력 상수
     public float friction = 5f; // 마찰 상수
     public float rotationSpeed = 10f; //회전 속도
 
