@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8660573975243964982}
   - component: {fileID: -4830946521936714071}
   m_Layer: 0
-  m_Name: blueShieldItem
+  m_Name: BlueShieldItem
   m_TagString: blueshielditem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,7 +148,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -159,7 +159,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!114 &8660573975243964982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2173535393941307082}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 516d18c8cf0fc2d47ba34bfb921dd895, type: 3}
+  m_Script: {fileID: 11500000, guid: 14ea3d7a425a3e6428a7569d33c73414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &-4830946521936714071
