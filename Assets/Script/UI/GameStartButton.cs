@@ -8,6 +8,7 @@ public class GameStartButton : MonoBehaviour
 {
     public void OnClick()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("MainScene");
     }
 }

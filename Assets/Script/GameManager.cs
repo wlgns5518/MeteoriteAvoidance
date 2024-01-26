@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -11,6 +13,10 @@ public class GameManager : MonoBehaviour
     public GameObject MeteorB;
     public GameObject MeteorC;
     public GameObject MeteorD;
+
+    public TextMeshProUGUI timeText;
+    public float time;
+    public float timeSet;
 
     private static GameManager instance = null;
 
@@ -28,8 +34,6 @@ public class GameManager : MonoBehaviour
 
 
     public List<GameObject> rewards = new List<GameObject>();
-
-
 
 
 
@@ -73,6 +77,13 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine("StartNextWave");
         InvokeRepeating("MakeMeteor", 0f, 0.5f);
+    }
+
+    private void Update()
+    {
+
+        time += Time.deltaTime;
+        timeText.text = time.ToString("N2");
     }
 
 
