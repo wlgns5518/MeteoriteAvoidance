@@ -7,8 +7,6 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject blueShieldItem; //½¯µå¾ÆÀÌÅÛÄ­
-    public GameObject shield; //Ä³¸¯ÅÍ¿¡ ºÎÂøÇÑ ½¯µåÄ­
     public GameObject MeteorA;
     public GameObject MeteorB;
     public GameObject MeteorC;
@@ -173,10 +171,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void activeshield()
-    {
-        shield.SetActive(true);
-    }
+
 
 
 
