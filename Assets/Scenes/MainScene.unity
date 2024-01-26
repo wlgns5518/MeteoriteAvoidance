@@ -321,6 +321,7 @@ GameObject:
   - component: {fileID: 105561109}
   - component: {fileID: 105561111}
   - component: {fileID: 105561110}
+  - component: {fileID: 105561112}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5275,6 +5276,20 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &105561112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105561096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47a374bd9607a7489da2d53f034f077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HpBar: {fileID: 0}
+  StaminaBar: {fileID: 0}
 --- !u!1 &112033751
 GameObject:
   m_ObjectHideFlags: 0
@@ -6306,6 +6321,8 @@ MonoBehaviour:
   MeteorB: {fileID: 7787517671771157793, guid: 54a82ed9c2c55884f829ebeda3ae84ab, type: 3}
   MeteorC: {fileID: 7787517671771157793, guid: a0916dd80e76bd149b3b7df752f42ac8, type: 3}
   MeteorD: {fileID: 7787517671771157793, guid: 653416cb5cb1af84aa1fd4eb984d025e, type: 3}
+  timeText: {fileID: 0}
+  time: 0
   currentWaveIndex: 0
   spawnInterval: 0.5
   spawnPositionsRoot: {fileID: 553824868}
