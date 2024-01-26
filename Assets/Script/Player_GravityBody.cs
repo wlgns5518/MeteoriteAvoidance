@@ -27,6 +27,8 @@ public class Player_GravityBody : MonoBehaviour
     public Sprite shield;
     public Sprite circle;
 
+    public PlayerStats stats;
+
     private void Start()
     {
         attractor = FindObjectOfType<GravityAttractor>();
@@ -108,6 +110,7 @@ public class Player_GravityBody : MonoBehaviour
             else
             {
                 playerHp -= 15;
+                stats.UpdateStats();
                 if (playerHp < 0)
                 {
                     playerHp = 0;

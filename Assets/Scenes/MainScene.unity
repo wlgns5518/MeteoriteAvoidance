@@ -370,6 +370,7 @@ MonoBehaviour:
   playerMaxhp: 100
   shield: {fileID: 21300000, guid: 357eb805c0b0bc2488ffebfb773be070, type: 3}
   circle: {fileID: 21300000, guid: 91e2c7219e3622b468284fe7c1b7c7a2, type: 3}
+  stats: {fileID: 105561112}
 --- !u!58 &105561109
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5212,6 +5213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47a374bd9607a7489da2d53f034f077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player_GravityBody: {fileID: 105561108}
   HpBar: {fileID: 196687738}
   StaminaBar: {fileID: 228566202}
 --- !u!1 &171318912

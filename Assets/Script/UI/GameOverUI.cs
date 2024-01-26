@@ -15,6 +15,7 @@ public class GameOverUI : MonoBehaviour
 
     private void Start()
     {
+        gameManager = GameManager.Instance;
         GameOver();
     }
     public void GameOver()

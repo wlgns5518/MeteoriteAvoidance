@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    private Player_GravityBody player_GravityBody;
+    public Player_GravityBody player_GravityBody;
     public Slider HpBar;
     public Slider StaminaBar;
     public void UpdateStats()
