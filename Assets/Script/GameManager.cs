@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI timeText;
     public float time;
-    public float timeSet;
 
     private static GameManager instance = null;
 
@@ -75,13 +74,13 @@ public class GameManager : MonoBehaviour
     }
     public void Start()
     {
+        time = 0f;
         StartCoroutine("StartNextWave");
         InvokeRepeating("MakeMeteor", 0f, 0.5f);
     }
 
     private void Update()
     {
-
         time += Time.deltaTime;
         timeText.text = time.ToString("N2");
     }
