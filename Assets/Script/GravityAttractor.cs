@@ -7,6 +7,13 @@ public class GravityAttractor : MonoBehaviour
     public float gravity = -20f; // 중력 상수
     public float friction = 5f; // 마찰 상수
     public float rotationSpeed = 10f; //회전 속도
+    public int rotationDirection = 1; //회전 방향
+
+    public void Start()
+    {
+        InvokeRepeating("RotateSpeedUp", 0f, 0.1f);
+        InvokeRepeating("RotateDirectionChange", 0f, 6f);
+    }
 
 
     // 중력 적용 함수
@@ -28,6 +35,22 @@ public class GravityAttractor : MonoBehaviour
 
     private void Update()
     {
-        transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime); //회전
+        transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime * rotationDirection); //회전
+    }
+
+    public void RotateSpeedUp()
+    {
+        rotationSpeed += 0.1f;
+    }
+    public void RotateDirectionChange()
+    {
+        if(rotationDirection == 1)
+        {
+            rotationDirection = -1;
+        }
+        else
+        {
+            rotationDirection = 1;
+        }
     }
 }

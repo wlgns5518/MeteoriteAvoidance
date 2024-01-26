@@ -5,8 +5,10 @@ using UnityEngine;
 public class Player_GravityBody : MonoBehaviour
 {
     private GravityAttractor attractor; //지구 오브젝트 참조용
-    private bool isGrounded; //땅 체크용
     private Rigidbody2D rb; //리지드바디 참조용
+    public SpriteRenderer player; //플레이어 스프라이트 변경용
+
+    private bool isGrounded; //땅 체크용
     public float jumpForce = 16f; // 점프 힘 조절용
     public float jumpCooldown = 0.2f; //점프 쿨타임용1
     private float lastJumpTime;  //점프 쿨타임용2
@@ -18,14 +20,19 @@ public class Player_GravityBody : MonoBehaviour
     public float maxStamina = 70f; //최대 스태미나
     public float staminaRegenRate = 0.5f; //초당 스태미나 리젠
 
-    public int playerHp = 100; // 플레이어 체력
-    public int playerMaxhp = 100; // 플레이어 최대 체력
+    public float playerHp = 100f; // 플레이어 체력
+    public float playerMaxhp = 100f; // 플레이어 최대 체력
+    
+    private bool isShield = false; //실드가 씌워져있는지
+    public Sprite shield;
+    public Sprite circle;
 
     private void Start()
     {
         attractor = FindObjectOfType<GravityAttractor>();
         rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("RegenerateStamina", 0f, 0.1f); //스태미나 리젠 시작
+        player = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -90,6 +97,32 @@ public class Player_GravityBody : MonoBehaviour
         {
             isGrounded = true;
         }
+        if (collision.gameObject.CompareTag("Meteor"))
+        {
+            if (isShield)
+            {
+                isShield = false;
+                player.sprite = circle;
+                
+            }
+            else
+            {
+                playerHp -= 15;
+                if (playerHp < 0)
+                {
+                    playerHp = 0;
+                }
+            }
+
+            Debug.Log($"현재 HP: {playerHp}/{playerMaxhp}");
+        }
+
+
+        if (collision.gameObject.CompareTag("blueshielditem"))
+        {
+            isShield = true;
+            player.sprite = shield;
+        }
     }
 
     void Jump()
@@ -129,7 +162,7 @@ public class Player_GravityBody : MonoBehaviour
         if (stamina < maxStamina)
         {
             stamina += staminaRegenRate;
-            Debug.Log($"현재 스태미나: {stamina}/{maxStamina}");
+            
         }
         else if (stamina > maxStamina)
         {
