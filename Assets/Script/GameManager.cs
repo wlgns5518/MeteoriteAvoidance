@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour
 {
     public GameObject blueShieldItem; //½¯µå¾ÆÀÌÅÛÄ­
     public GameObject shield; //Ä³¸¯ÅÍ¿¡ ºÎÂøÇÑ ½¯µåÄ­
+    public GameObject MeteorA;
+    public GameObject MeteorB;
+    public GameObject MeteorC;
+    public GameObject MeteorD;
 
     private static GameManager instance = null;
 
@@ -68,13 +72,16 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         StartCoroutine("StartNextWave");
-
+        InvokeRepeating("MakeMeteor", 0f, 0.5f);
     }
 
 
     private void MakeMeteor()
     {
-
+        Instantiate(MeteorA);
+        Instantiate(MeteorB);
+        Instantiate(MeteorC);
+        Instantiate(MeteorD);
     }
 
 
@@ -104,19 +111,23 @@ public class GameManager : MonoBehaviour
 
                 if (currentWaveIndex % 5 == 0)
                 {
-
+                    
                 }
 
                 if(currentWaveIndex % 3 == 0)
                 {
                     waveSpawnCount += 1;
+                    
                 }
 
 
                 if (currentWaveIndex % 5 == 0)
                 {
                     CreateShield();
+                    
                 }
+
+               
 
 
 

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3077934403646921265}
   - component: {fileID: 4943494681108100409}
   - component: {fileID: 7720410712797485209}
-  - component: {fileID: 1233850398583627543}
+  - component: {fileID: -7134629148595745004}
   m_Layer: 0
-  m_Name: Meteor
+  m_Name: Meteor U
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,9 +95,9 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8, y: 0.8}
   m_Direction: 0
---- !u!114 &1233850398583627543
+--- !u!114 &-7134629148595745004
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7787517671771157793}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74ffcfe7d96ac8d468b686934b50c738, type: 3}
+  m_Script: {fileID: 11500000, guid: ef085a181d28c574e937401129c17e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Ground

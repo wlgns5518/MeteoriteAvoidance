@@ -1502,6 +1502,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blueShieldItem: {fileID: 2173535393941307082, guid: 451aa74679fe0e9439e138b183fb11b5, type: 3}
   shield: {fileID: 0}
+  MeteorA: {fileID: 7787517671771157793, guid: cbf7e886b3db31a48b037626a2b8d9e1, type: 3}
+  MeteorB: {fileID: 7787517671771157793, guid: 54a82ed9c2c55884f829ebeda3ae84ab, type: 3}
+  MeteorC: {fileID: 7787517671771157793, guid: a0916dd80e76bd149b3b7df752f42ac8, type: 3}
+  MeteorD: {fileID: 7787517671771157793, guid: 653416cb5cb1af84aa1fd4eb984d025e, type: 3}
   currentWaveIndex: 0
   spawnInterval: 0.5
   spawnPositionsRoot: {fileID: 553824868}

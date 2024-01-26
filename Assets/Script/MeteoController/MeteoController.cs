@@ -2,25 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Meteor : MonoBehaviour
+public class MeteoController : MonoBehaviour
 {
-    private Transform targetPoint;
-    private bool IsGrounded;
-    private bool IsCrashPlayer;
+    protected Transform targetPoint;
 
+    protected float x;
+    protected float y;
     private float speed;
-    [SerializeField] private string targetTag = "Ground";
+    [SerializeField] protected string targetTag;
 
-    private void Start()
+    protected virtual void Start()
     {
-        speed = Random.Range(5, 20);
-        targetPoint = GameObject.FindGameObjectWithTag(targetTag).transform;
+        speed = Random.Range(3, 6);
+        x = Random.Range(8, 10);
+        y = Random.Range(-8, 8);    
     }
 
     private void Update()
     {
-        meteorMove();
-        DestroyMetro();
+        meteorMove();        
     }
 
     private void meteorMove()
@@ -31,24 +31,17 @@ public class Meteor : MonoBehaviour
         transform.Translate(direction.normalized * speed * Time.deltaTime);
     }
 
-    private void DestroyMetro()
-    {
-        if(IsGrounded == true)
-        {
-            Destroy(gameObject);
-        }
-    }
 
      void OnCollisionEnter2D(Collision2D collision)    //지면에 닿았을 시 발동하는 코드
     {
         // 바닥에 닿으면 isGrounded를 true로 설정
         if (collision.gameObject.CompareTag("Ground"))
         {
-            IsGrounded = true;
+            Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag("Player"))
         {
-            IsCrashPlayer = true;
+            Destroy(gameObject);
         }
     }
 }
