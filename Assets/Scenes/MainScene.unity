@@ -357,6 +357,7 @@ GameObject:
   - component: {fileID: 105561106}
   - component: {fileID: 105561108}
   - component: {fileID: 105561109}
+  - component: {fileID: 105561110}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -513,6 +514,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &105561110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105561096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47a374bd9607a7489da2d53f034f077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HpBar: {fileID: 1015420518}
+  StaminaBar: {fileID: 1086440820}
 --- !u!1 &171318912
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,6 +1217,7 @@ MonoBehaviour:
   MeteorC: {fileID: 7787517671771157793, guid: a0916dd80e76bd149b3b7df752f42ac8, type: 3}
   MeteorD: {fileID: 7787517671771157793, guid: 653416cb5cb1af84aa1fd4eb984d025e, type: 3}
   timeText: {fileID: 1267969318}
+  time: 0
   currentWaveIndex: 0
   spawnInterval: 0.5
   spawnPositionsRoot: {fileID: 553824868}
