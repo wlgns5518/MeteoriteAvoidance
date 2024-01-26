@@ -15,11 +15,7 @@ public class GameOverUI : MonoBehaviour
 
     private void Start()
     {
-        gameManager = GameManager.Instance;
-        if (gameManager != null)
-        {
-            GameOver();
-        }
+        GameOver();
     }
     public void GameOver()
     {
