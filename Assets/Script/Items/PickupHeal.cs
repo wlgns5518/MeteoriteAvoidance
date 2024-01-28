@@ -4,14 +4,40 @@ using UnityEngine;
 
 public class PickupHeal : PickupItems
 {
-    [SerializeField] int playerHp = 10;
+    private GravityAttractor attractor;
+
+    //[SerializeField] int playerHp = 10;
     //private HealthSystem _healthSystem;
 
     protected override void OnPickedUp(GameObject receiver)
     {
-        throw new System.NotImplementedException();
+        //_healthSystem = receiver.GetComponent<HealthSystem>();
+        //_healthSystem.ChangeHealth(healValue);
     }
 
-    // Start is called before the first frame update
+    private void Start()
+    {
+        attractor = FindObjectOfType<GravityAttractor>();
+    }
+
+    private void Update()
+    {
+        attractor.Attract(GetComponent<Rigidbody2D>());
+    }
+
+
+
+    void OnCollisionEnter2D(Collision2D collision)    //플레이어에 닿았을 시 발동하는 코드
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+
+        }
+        else
+        {
+            Destroy(gameObject, 5.0f);
+        }
+    }
 
 }

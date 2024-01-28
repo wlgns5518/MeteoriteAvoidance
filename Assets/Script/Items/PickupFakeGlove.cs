@@ -5,10 +5,13 @@ using UnityEngine;
 public class PickupFakeGlove : MonoBehaviour
 {
     private GravityAttractor attractor;
+    public string targetTag = "Meteor";
+
 
     private void Start()
     {
         attractor = FindObjectOfType<GravityAttractor>();
+
     }
 
     private void Update()
@@ -16,7 +19,19 @@ public class PickupFakeGlove : MonoBehaviour
         attractor.Attract(GetComponent<Rigidbody2D>());
     }
 
-
+    void DeleteObjectsWithTargetTag()
+    {
+        // 씬에서 모든 GameObject를 찾아옵니다.
+        GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
+        // 찾은 모든 GameObject를 순회하며 태그가 일치하는 경우 삭제합니다.
+        foreach (GameObject obj in allObjects)
+        {
+            if (obj.CompareTag(targetTag))
+            {
+                Destroy(obj);
+            }
+        }
+    }
 
 
     // Update is called once per frame
@@ -25,7 +40,7 @@ public class PickupFakeGlove : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-
+            DeleteObjectsWithTargetTag();
 
         }
 

@@ -118,11 +118,26 @@ public class Player_GravityBody : MonoBehaviour
         }
 
 
-        if (collision.gameObject.CompareTag("blueshielditem"))
+        if (collision.gameObject.CompareTag("BlueShieldItem"))
         {
             isShield = true;
             player.sprite = shield;
         }
+
+        if (collision.gameObject.CompareTag("GreenHealingItem")) //Hp포션 태그 비교 후 플레이어 체력 회복 기능 및 디버그 상으로 회복이 확인되나 즉시 반영안됨 
+        {
+            playerHp += 15;
+        }
+
+        if (collision.gameObject.CompareTag("GreenStaminaItem")) //Sp포션 태그 비교 후 플레이어 기력 회복 기능 및 디버그 상으로 회복이 확인
+        {
+            stamina += 15;
+
+            Debug.Log($"현재 SP: {stamina}/{maxStamina}");
+        }
+
+        
+
     }
 
     void Jump()

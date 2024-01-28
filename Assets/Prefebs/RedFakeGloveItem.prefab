@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 864351955056336020}
   m_Layer: 0
   m_Name: RedFakeGloveItem
-  m_TagString: Untagged
+  m_TagString: RedFakeGloveItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,3 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c7cc65203ab648429e2a8f35d5fd2d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTag: Meteor

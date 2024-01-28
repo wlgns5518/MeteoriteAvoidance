@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
 
                 if (currentWaveIndex % 5 == 0)
                 {
-                    CreateShield();
+                    CreateReward();
                     
                 }
 
@@ -161,7 +161,7 @@ public class GameManager : MonoBehaviour
     
 
 
-    void CreateShield() //방패아이템 호출
+    void CreateReward() //아이템 호출
     {
         int idx = Random.Range(0, rewards.Count);
         int posIdx = Random.Range(0, spawnPositions.Count);

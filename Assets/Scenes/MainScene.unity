@@ -123,37 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &20491737
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 20491738}
-  m_Layer: 0
-  m_Name: GameObject (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &20491738
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 20491737}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: -1.3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 553824868}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &60535482
 GameObject:
   m_ObjectHideFlags: 0
@@ -5214,37 +5183,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HpBar: {fileID: 196687738}
   StaminaBar: {fileID: 228566202}
---- !u!1 &171318912
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 171318913}
-  m_Layer: 0
-  m_Name: GameObject (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &171318913
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 171318912}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 553824868}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &196687736
 GameObject:
   m_ObjectHideFlags: 0
@@ -5764,7 +5702,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365530140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5909,6 +5847,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 553824868}
+  - component: {fileID: 553824869}
   m_Layer: 0
   m_Name: SpawnPositions
   m_TagString: Untagged
@@ -5929,11 +5868,21 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 365530141}
-  - {fileID: 171318913}
-  - {fileID: 20491738}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &553824869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553824867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c3eb2358dc64e247b31315d0495c21d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &569161068
 GameObject:
   m_ObjectHideFlags: 0
@@ -5963,8 +5912,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb033c14950a79479d3e4dd17888e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blueShieldItem: {fileID: 2173535393941307082, guid: 451aa74679fe0e9439e138b183fb11b5, type: 3}
-  shield: {fileID: 0}
   MeteorA: {fileID: 7787517671771157793, guid: cbf7e886b3db31a48b037626a2b8d9e1, type: 3}
   MeteorB: {fileID: 7787517671771157793, guid: 54a82ed9c2c55884f829ebeda3ae84ab, type: 3}
   MeteorC: {fileID: 7787517671771157793, guid: a0916dd80e76bd149b3b7df752f42ac8, type: 3}
@@ -5975,7 +5922,10 @@ MonoBehaviour:
   spawnInterval: 0.5
   spawnPositionsRoot: {fileID: 553824868}
   rewards:
-  - {fileID: 2173535393941307082, guid: 451aa74679fe0e9439e138b183fb11b5, type: 3}
+  - {fileID: 1033714584812146182, guid: 451aa74679fe0e9439e138b183fb11b5, type: 3}
+  - {fileID: 2468806175981961950, guid: a38e497a92d62af47a612f9c7ead4807, type: 3}
+  - {fileID: 2643518733068807712, guid: 8ba85f26294861044b151d0bfcfe998e, type: 3}
+  - {fileID: 7967634436729954279, guid: 660640b524504fb4aa226e797854bb85, type: 3}
 --- !u!4 &569161070
 Transform:
   m_ObjectHideFlags: 0
