@@ -28,5 +28,6 @@ public class GameOverUI : MonoBehaviour
             bestTime = time;
         }
         bestTimeUI.text = "BestTime : "+bestTime.ToString("N2");
+        gameManager.time = 0f;
     }
 }
