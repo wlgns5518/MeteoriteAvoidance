@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player_GravityBody : MonoBehaviour
 {
@@ -23,9 +25,12 @@ public class Player_GravityBody : MonoBehaviour
     public float playerHp = 100f; // 플레이어 체력
     public float playerMaxhp = 100f; // 플레이어 최대 체력
     
-    private bool isShield = false; //실드가 씌워져있는지
+    private int isShield = 0; //실드가 씌워져있는지
     public Sprite shield;
     public Sprite circle;
+
+    public Slider HpBar;
+    public Slider StaminaBar;
 
     private void Start()
     {
@@ -57,9 +62,9 @@ public class Player_GravityBody : MonoBehaviour
         // 쉬프트 키가 눌렸을 때 OrbitAroundAttractor 호출
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetMouseButtonDown(1))
         {
-            if (stamina >= 14)
+            if (stamina >= 20)
             {
-                if (isDashKeyPressed == 0 )      //부드러운 대쉬를 위해.. 연속 호출.. 대쉬 한번당 스태미나 14 소모
+                if (isDashKeyPressed == 0 )      //부드러운 대쉬를 위해.. 연속 호출.. 대쉬 한번당 스태미나 18 소모
                 {
                     Invoke("OrbitAroundAttractorWithShift", 0f);
                     Invoke("OrbitAroundAttractorWithShift", 0.01f);
@@ -75,6 +80,7 @@ public class Player_GravityBody : MonoBehaviour
                     Invoke("OrbitAroundAttractorWithShift", 0.11f);
                     Invoke("OrbitAroundAttractorWithShift", 0.135f);
                     Invoke("OrbitAroundAttractorWithShift", 0.15f);
+                    
                     isDashKeyPressed = 1;
                     
                 }
@@ -99,19 +105,25 @@ public class Player_GravityBody : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Meteor"))
         {
-            if (isShield)
+            if (isShield >=1)
             {
-                isShield = false;
-                player.sprite = circle;
-                
+                isShield -= 1;
+                if (isShield <= 0)
+                {
+                    isShield = 0;
+                    player.sprite = circle;
+                }
             }
             else
             {
-                playerHp -= 15;
+                playerHp -= 18;
                 if (playerHp < 0)
                 {
                     playerHp = 0;
+                    HpBar.value = playerHp / playerMaxhp;
+                    SceneManager.LoadScene("EndScene");
                 }
+                HpBar.value = playerHp / playerMaxhp;
             }
 
             Debug.Log($"현재 HP: {playerHp}/{playerMaxhp}");
@@ -120,18 +132,35 @@ public class Player_GravityBody : MonoBehaviour
 
         if (collision.gameObject.CompareTag("BlueShieldItem"))
         {
-            isShield = true;
+            isShield = 2;
             player.sprite = shield;
         }
 
         if (collision.gameObject.CompareTag("GreenHealingItem")) //Hp포션 태그 비교 후 플레이어 체력 회복 기능 및 디버그 상으로 회복이 확인되나 즉시 반영안됨 /Item
         {
-            playerHp += 15;
+            playerHp += 27;
+            if (playerHp > playerMaxhp)
+            {
+                playerHp = playerMaxhp;
+            }
+            HpBar.value = playerHp / playerMaxhp;
         }
 
         if (collision.gameObject.CompareTag("GreenStaminaItem")) //Sp포션 태그 비교 후 플레이어 기력 회복 기능 및 디버그 상으로 회복이 확인/Item
         {
-            stamina += 15;
+            stamina += 50;
+
+            if (stamina > maxStamina)
+            {
+                stamina = maxStamina;
+            }
+            playerHp += 5;
+            if (playerHp > playerMaxhp)
+            {
+                playerHp = playerMaxhp;
+            }
+            HpBar.value = playerHp / playerMaxhp;
+            StaminaBar.value = stamina / maxStamina;
 
             Debug.Log($"현재 SP: {stamina}/{maxStamina}");
         }
@@ -164,12 +193,13 @@ public class Player_GravityBody : MonoBehaviour
     void OrbitAroundAttractorWithShift()  //대쉬
     {
         float orbitDirection = Mathf.Sign(lastHorizontalInput) * -1;
-        transform.RotateAround(attractor.transform.position, Vector3.forward, orbitDirection * 250 * Time.deltaTime);
-        stamina -= 1;
+        transform.RotateAround(attractor.transform.position, Vector3.forward, orbitDirection * 300 * Time.deltaTime);
+        stamina -= 1.4f;
         if (stamina < 0)
         {
             stamina = 0;
         }
+        StaminaBar.value = stamina / maxStamina;
     }
 
     void RegenerateStamina() //스태미나 리젠
@@ -177,7 +207,7 @@ public class Player_GravityBody : MonoBehaviour
         if (stamina < maxStamina)
         {
             stamina += staminaRegenRate;
-            
+            StaminaBar.value = stamina / maxStamina;
         }
         else if (stamina > maxStamina)
         {
