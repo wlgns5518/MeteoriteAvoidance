@@ -20,7 +20,7 @@ public class Player_GravityBody : MonoBehaviour
 
     public float stamina = 70f; //대쉬용 스태미나
     public float maxStamina = 70f; //최대 스태미나
-    public float staminaRegenRate = 0.5f; //초당 스태미나 리젠
+    public float staminaRegenRate = 0.2f; //초당 스태미나 리젠
 
     public float playerHp = 100f; // 플레이어 체력
     public float playerMaxhp = 100f; // 플레이어 최대 체력
@@ -62,9 +62,9 @@ public class Player_GravityBody : MonoBehaviour
         // 쉬프트 키가 눌렸을 때 OrbitAroundAttractor 호출
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetMouseButtonDown(1))
         {
-            if (stamina >= 20)
+            if (stamina >= 28)
             {
-                if (isDashKeyPressed == 0 )      //부드러운 대쉬를 위해.. 연속 호출.. 대쉬 한번당 스태미나 18 소모
+                if (isDashKeyPressed == 0 )      //부드러운 대쉬를 위해.. 연속 호출.. 대쉬 한번당 스태미나 28 소모
                 {
                     Invoke("OrbitAroundAttractorWithShift", 0f);
                     Invoke("OrbitAroundAttractorWithShift", 0.01f);
@@ -116,7 +116,7 @@ public class Player_GravityBody : MonoBehaviour
             }
             else
             {
-                playerHp -= 18;
+                playerHp -= 20;
                 if (playerHp < 0)
                 {
                     playerHp = 0;
@@ -132,7 +132,7 @@ public class Player_GravityBody : MonoBehaviour
 
         if (collision.gameObject.CompareTag("BlueShieldItem"))
         {
-            isShield = 2;
+            isShield += 2;
             player.sprite = shield;
         }
 
@@ -149,7 +149,6 @@ public class Player_GravityBody : MonoBehaviour
         if (collision.gameObject.CompareTag("GreenStaminaItem")) //Sp포션 태그 비교 후 플레이어 기력 회복 기능 및 디버그 상으로 회복이 확인/Item
         {
             stamina += 50;
-
             if (stamina > maxStamina)
             {
                 stamina = maxStamina;
@@ -193,8 +192,8 @@ public class Player_GravityBody : MonoBehaviour
     void OrbitAroundAttractorWithShift()  //대쉬
     {
         float orbitDirection = Mathf.Sign(lastHorizontalInput) * -1;
-        transform.RotateAround(attractor.transform.position, Vector3.forward, orbitDirection * 650 * Time.deltaTime);
-        stamina -= 1.4f;
+        transform.RotateAround(attractor.transform.position, Vector3.forward, orbitDirection * 500 * Time.deltaTime);
+        stamina -= 2f;
         if (stamina < 0)
         {
             stamina = 0;
