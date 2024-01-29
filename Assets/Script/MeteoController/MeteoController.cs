@@ -11,7 +11,7 @@ public class MeteoController : MonoBehaviour
     private float speed;
     [SerializeField] protected string targetTag;
 
-    protected virtual void Start()
+    protected virtual void Start()   // 운석의 스피드와 생성될 위치를 
     {
         speed = Random.Range(3, 6);
         x = Random.Range(8, 10);
@@ -23,7 +23,7 @@ public class MeteoController : MonoBehaviour
         meteorMove();        
     }
 
-    private void meteorMove()
+    private void meteorMove()  // 운석이 타겟 방향으로 가도록 설정
     {
         if (targetPoint == null)
             return;
@@ -34,7 +34,7 @@ public class MeteoController : MonoBehaviour
 
      void OnCollisionEnter2D(Collision2D collision)    //지면에 닿았을 시 발동하는 코드
     {
-        // 바닥에 닿으면 isGrounded를 true로 설정
+        // 바닥이나 플레이어에 닿으면 오브젝트 삭제
         if (collision.gameObject.CompareTag("Ground"))
         {
             Destroy(gameObject);

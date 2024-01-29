@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MeteorU : MeteoController
 {
-    // Start is called before the first frame update
-    protected override void Start()
+    
+    protected override void Start() // 화면 위쪽에 운석이 생성 x좌표 (-8 ~ 8), y좌표 (8 ~ 10)
     {
         base.Start();
         targetPoint = GameObject.FindGameObjectWithTag(targetTag).transform;

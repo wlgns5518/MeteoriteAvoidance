@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MeteorL : MeteoController
 {
-    // Start is called before the first frame update
-    protected override void Start()
+    
+    protected override void Start()  // È­¸é ¿ŞÂÊ¿¡ ¿î¼®ÀÌ »ı¼ºµÊ xÁÂÇ¥ (-8 ~ -10), yÁÂÇ¥ (-8 ~ 8) 
     {
         base.Start();
         targetPoint = GameObject.FindGameObjectWithTag(targetTag).transform;
