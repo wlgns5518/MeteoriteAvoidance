@@ -19,7 +19,7 @@ public class GameOverUI : MonoBehaviour
     public void GameOver()
     {
         Time.timeScale = 0f;
-        time = TimeSetting.time;
+        time = GameManager.time;
         setTimeUI.text = "Time : " +time.ToString("N2");
         bestTime = PlayerPrefs.GetFloat("BestTime");
         if(bestTime < time) 
