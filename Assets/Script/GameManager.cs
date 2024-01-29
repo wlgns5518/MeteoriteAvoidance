@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         time = 0f;
+        Time.timeScale = 1f;
         StartCoroutine("StartNextWave");
         InvokeRepeating("MakeMeteor", 0f, 0.5f);
     }
