@@ -470,7 +470,7 @@ MonoBehaviour:
   orbitSpeed: 150
   stamina: 70
   maxStamina: 70
-  staminaRegenRate: 0.4
+  staminaRegenRate: 0.45
   playerHp: 100
   playerMaxhp: 100
   shield: {fileID: 21300000, guid: 357eb805c0b0bc2488ffebfb773be070, type: 3}

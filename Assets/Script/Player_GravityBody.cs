@@ -62,9 +62,9 @@ public class Player_GravityBody : MonoBehaviour
         // 쉬프트 키가 눌렸을 때 OrbitAroundAttractor 호출
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetMouseButtonDown(1))
         {
-            if (stamina >= 28)
+            if (stamina >= 24)
             {
-                if (isDashKeyPressed == 0 )      //부드러운 대쉬를 위해.. 연속 호출.. 대쉬 한번당 스태미나 28 소모
+                if (isDashKeyPressed == 0 )      //부드러운 대쉬를 위해.. 연속 호출.. 대쉬 한번당 스태미나 24 소모
                 {
                     Invoke("OrbitAroundAttractorWithShift", 0f);
                     Invoke("OrbitAroundAttractorWithShift", 0.01f);
@@ -116,7 +116,7 @@ public class Player_GravityBody : MonoBehaviour
             }
             else
             {
-                playerHp -= 20;
+                playerHp -= 22;
                 if (playerHp < 0)
                 {
                     playerHp = 0;
@@ -193,7 +193,7 @@ public class Player_GravityBody : MonoBehaviour
     {
         float orbitDirection = Mathf.Sign(lastHorizontalInput) * -1;
         transform.RotateAround(attractor.transform.position, Vector3.forward, orbitDirection * 500 * Time.deltaTime);
-        stamina -= 2f;
+        stamina -= 1.7f;
         if (stamina < 0)
         {
             stamina = 0;
