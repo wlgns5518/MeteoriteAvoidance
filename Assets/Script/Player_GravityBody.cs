@@ -11,7 +11,7 @@ public class Player_GravityBody : MonoBehaviour
     public SpriteRenderer player; //플레이어 스프라이트 변경용
 
     private bool isGrounded; //땅 체크용
-    public float jumpForce = 16f; // 점프 힘 조절용
+    public float jumpForce = 14.5f; // 점프 힘 조절용
     public float jumpCooldown = 0.2f; //점프 쿨타임용1
     private float lastJumpTime;  //점프 쿨타임용2
     public float orbitSpeed = 150f; // 공전 속도 조절용
@@ -138,7 +138,7 @@ public class Player_GravityBody : MonoBehaviour
 
         if (collision.gameObject.CompareTag("GreenHealingItem")) //Hp포션 태그 비교 후 플레이어 체력 회복 기능 및 디버그 상으로 회복이 확인되나 즉시 반영안됨 /Item
         {
-            playerHp += 27;
+            playerHp += 32;
             if (playerHp > playerMaxhp)
             {
                 playerHp = playerMaxhp;
@@ -154,7 +154,7 @@ public class Player_GravityBody : MonoBehaviour
             {
                 stamina = maxStamina;
             }
-            playerHp += 5;
+            playerHp += 12;
             if (playerHp > playerMaxhp)
             {
                 playerHp = playerMaxhp;
@@ -193,7 +193,7 @@ public class Player_GravityBody : MonoBehaviour
     void OrbitAroundAttractorWithShift()  //대쉬
     {
         float orbitDirection = Mathf.Sign(lastHorizontalInput) * -1;
-        transform.RotateAround(attractor.transform.position, Vector3.forward, orbitDirection * 300 * Time.deltaTime);
+        transform.RotateAround(attractor.transform.position, Vector3.forward, orbitDirection * 650 * Time.deltaTime);
         stamina -= 1.4f;
         if (stamina < 0)
         {
