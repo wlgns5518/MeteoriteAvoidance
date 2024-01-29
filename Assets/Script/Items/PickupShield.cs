@@ -1,22 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
-public class blueshielditem : MonoBehaviour
+public class PickupShield : PickupItems
 {
+
+    protected override void OnPickedUp(GameObject receiver)
+    {
+        //gameObject.SetActive(true);
+    }
 
     private GravityAttractor attractor;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         attractor = FindObjectOfType<GravityAttractor>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         attractor.Attract(GetComponent<Rigidbody2D>());
     }
+
 
 
     void OnCollisionEnter2D(Collision2D collision)    //플레이어에 닿았을 시 발동하는 코드
@@ -30,11 +36,7 @@ public class blueshielditem : MonoBehaviour
         {
             Destroy(gameObject, 5.0f);
         }
-
-        if (collision.gameObject.CompareTag("shield"))
-        {
-            //activeshield();
-        }
     }
+
 
 }

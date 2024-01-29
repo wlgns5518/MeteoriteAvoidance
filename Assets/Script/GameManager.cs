@@ -7,8 +7,6 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject blueShieldItem; //쉴드아이템칸
-    public GameObject shield; //캐릭터에 부착한 쉴드칸
     public GameObject MeteorA;
     public GameObject MeteorB;
     public GameObject MeteorC;
@@ -132,7 +130,7 @@ public class GameManager : MonoBehaviour
 
                 if (currentWaveIndex % 5 == 0)
                 {
-                    CreateShield();
+                    CreateReward();
                     
                 }
 
@@ -162,7 +160,7 @@ public class GameManager : MonoBehaviour
     
 
 
-    void CreateShield() //방패아이템 호출
+    void CreateReward() //아이템 호출
     {
         int idx = Random.Range(0, rewards.Count);
         int posIdx = Random.Range(0, spawnPositions.Count);
@@ -172,10 +170,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void activeshield()
-    {
-        shield.SetActive(true);
-    }
+
 
 
 
