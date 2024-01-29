@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class GameOverUI : MonoBehaviour
 {
-    static GameManager gameManager;
     public TextMeshProUGUI setTimeUI;
     public TextMeshProUGUI bestTimeUI;
     public float time;
@@ -15,19 +14,19 @@ public class GameOverUI : MonoBehaviour
 
     private void Start()
     {
-        gameManager = GameManager.Instance;
         GameOver();
     }
     public void GameOver()
     {
         Time.timeScale = 0f;
-        time = gameManager.time;
+        time = TimeSetting.time;
         setTimeUI.text = "Time : " +time.ToString("N2");
+        bestTime = PlayerPrefs.GetFloat("BestTime");
         if(bestTime < time) 
         { 
             bestTime = time;
-        }
+            PlayerPrefs.SetFloat("BestTime",bestTime);
+}
         bestTimeUI.text = "BestTime : "+bestTime.ToString("N2");
-        gameManager.time = 0f;
     }
 }
