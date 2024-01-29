@@ -42,7 +42,6 @@ public class GameManager : MonoBehaviour
         if (null == instance)      //씬 이동 시 해당 씬에 이미 GameManager 오브젝트 인스턴스가 존재할 시 해당씬의 인스턴스는 삭제하고 이 인스턴스를 남긴다
         {
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
         }
         else
         {
@@ -72,8 +71,9 @@ public class GameManager : MonoBehaviour
     }
     public void Start()
     {
-        time = 0f;
+
         StartCoroutine("StartNextWave", 0f);
+
         InvokeRepeating("MakeMeteor", 0f, 0.5f);
     }
 
