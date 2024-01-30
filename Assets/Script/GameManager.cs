@@ -99,12 +99,6 @@ public class GameManager : MonoBehaviour
 
 
 
-
-
-
-
-
-
     IEnumerator StartNextWave() //시간별로 함수 및 함수에 관련된 오브젝트 호출
     {
         while(true)

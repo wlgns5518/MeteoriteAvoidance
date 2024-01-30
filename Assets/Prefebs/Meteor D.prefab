@@ -109,7 +109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae7e924fa309d7645972b1e1bddfae33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _particle: {fileID: 0}
   targetTag: Ground
+  anim: {fileID: 6361260683678298727}
 --- !u!1 &7812819870698200728
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +207,7 @@ Animator:
   m_GameObject: {fileID: 7812819870698200728}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e5891110be86c8b42a399c79ecaad1c1, type: 2}
+  m_Controller: {fileID: 9100000, guid: a4e89a34d8bbe8d41bb7b6f04f6018bb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

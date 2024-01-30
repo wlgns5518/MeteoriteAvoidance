@@ -9,6 +9,7 @@ public class Player_GravityBody : MonoBehaviour
     private GravityAttractor attractor; //지구 오브젝트 참조용
     private Rigidbody2D rb; //리지드바디 참조용
     public SpriteRenderer player; //플레이어 스프라이트 변경용
+  //  private ParticleController particleController;
 
     private bool isGrounded; //땅 체크용
     public float jumpForce = 14.5f; // 점프 힘 조절용
@@ -35,12 +36,14 @@ public class Player_GravityBody : MonoBehaviour
     public AudioClip jump;
     public AudioSource audioSource;
 
+
     private void Start()
     {
         attractor = FindObjectOfType<GravityAttractor>();
         rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("RegenerateStamina", 0f, 0.1f); //스태미나 리젠 시작
         player = GetComponent<SpriteRenderer>();
+        
     }
 
     private void Update()
@@ -115,6 +118,7 @@ public class Player_GravityBody : MonoBehaviour
                 {
                     isShield = 0;
                     player.sprite = circle;
+                    player.transform.localScale = new Vector3(0.25f, 0.25f, 1);
                 }
             }
             else
@@ -137,6 +141,7 @@ public class Player_GravityBody : MonoBehaviour
         {
             isShield += 2;
             player.sprite = shield;
+            player.transform.localScale = new Vector3(0.5f, 0.5f, 1);
         }
 
         if (collision.gameObject.CompareTag("GreenHealingItem")) //Hp포션 태그 비교 후 플레이어 체력 회복 기능 및 디버그 상으로 회복이 확인되나 즉시 반영안됨 /Item
@@ -147,6 +152,9 @@ public class Player_GravityBody : MonoBehaviour
                 playerHp = playerMaxhp;
             }
             HpBar.value = playerHp / playerMaxhp;
+           // Vector3 position = player.transform.position;          
+           // particleController.CreateHealParticle(position);
+                      
         }
 
         if (collision.gameObject.CompareTag("GreenStaminaItem")) //Sp포션 태그 비교 후 플레이어 기력 회복 기능 및 디버그 상으로 회복이 확인/Item
