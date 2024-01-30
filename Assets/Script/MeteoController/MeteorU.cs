@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class MeteorU : MeteoController
 {
+
+
     // Start is called before the first frame update
+
+
+
+
     protected override void Start()
     {
         base.Start();
@@ -12,4 +18,6 @@ public class MeteorU : MeteoController
 
         transform.position = new Vector3(y, x);
     }
+
+
 }

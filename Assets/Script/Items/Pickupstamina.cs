@@ -10,10 +10,10 @@ public class Pickupstamina : PickupItems
         throw new System.NotImplementedException();
     }
 
-
     private GravityAttractor attractor;
 
-    [SerializeField] int playerSp = 10;
+    public AudioClip pickup;
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     private void Start()
@@ -32,7 +32,7 @@ public class Pickupstamina : PickupItems
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-
+            audioSource.PlayOneShot(pickup);
         }
         else
         {

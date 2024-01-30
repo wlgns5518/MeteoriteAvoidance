@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MeteorD : MeteoController
 {
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -13,5 +14,5 @@ public class MeteorD : MeteoController
         transform.position = new Vector3(y, -x);
     }
 
-   
+
 }

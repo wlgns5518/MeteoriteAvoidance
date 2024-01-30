@@ -32,6 +32,9 @@ public class Player_GravityBody : MonoBehaviour
     public Slider HpBar;
     public Slider StaminaBar;
 
+    public AudioClip jump;
+    public AudioSource audioSource;
+
     private void Start()
     {
         attractor = FindObjectOfType<GravityAttractor>();
@@ -182,6 +185,10 @@ public class Player_GravityBody : MonoBehaviour
 
         // ¶¥¿¡¼­ ¶³¾îÁü ÆÇÁ¤
         isGrounded = false;
+
+        //Á¡ÇÁÈ¿°úÀ½
+        audioSource.PlayOneShot(jump);
+
     }
 
     void OrbitAroundAttractor(float horizontalInput)
