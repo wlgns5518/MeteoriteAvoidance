@@ -6,14 +6,13 @@ public class PickupHeal : PickupItems
 {
     private GravityAttractor attractor;
 
-    //[SerializeField] int playerHp = 10;
-    //private HealthSystem _healthSystem;
-
     protected override void OnPickedUp(GameObject receiver)
     {
-        //_healthSystem = receiver.GetComponent<HealthSystem>();
-        //_healthSystem.ChangeHealth(healValue);
+
     }
+
+    public AudioClip pickup;
+    public AudioSource audioSource;
 
     private void Start()
     {
@@ -32,6 +31,7 @@ public class PickupHeal : PickupItems
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
+            audioSource.PlayOneShot(pickup);
 
         }
         else

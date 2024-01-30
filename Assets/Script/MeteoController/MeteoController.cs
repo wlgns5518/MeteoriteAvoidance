@@ -11,6 +11,7 @@ public class MeteoController : MonoBehaviour
     private float speed;
     [SerializeField] protected string targetTag;
 
+
     protected virtual void Start()   // 운석의 스피드와 생성될 위치를 
     {
         speed = Random.Range(3, 6);
@@ -37,11 +38,16 @@ public class MeteoController : MonoBehaviour
         // 바닥이나 플레이어에 닿으면 오브젝트 삭제
         if (collision.gameObject.CompareTag("Ground"))
         {
+
             Destroy(gameObject);
+
         }
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
+ 
         }
     }
+
+
 }

@@ -12,6 +12,4 @@ public class MeteorL : MeteoController
 
         transform.position = new Vector3(-x, y);
     }
-
-   
 }

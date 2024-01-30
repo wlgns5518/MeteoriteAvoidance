@@ -9,13 +9,14 @@ public class ShapeChanger : MonoBehaviour
     BoxCollider2D boxCollider; 
     public Transform myTransform; //트랜스폼
     private int randomIncrease = 0;  //크기를 증가시킬지 뺼지 결정하는 랜덤인수
-    private float randomSize = 0; //크기를 얼마나 증감할지 결장히는 랜덤인수
+    private float randomSize = 0; //크기를 얼마나 증감할지 결정하는 랜덤인수
+
 
     void Start()
     {
         //시작은 Circle
         CircleCollider2D circleCollider = gameObject.AddComponent<CircleCollider2D>();
-        // 게임 시작 시 10초마다 ShapeChange 함수 호출
+        // 게임 시작 시 3초마다 ShapeChange 함수 호출
         InvokeRepeating("ShapeChange", 3f, 3f);
         InvokeRepeating("ShapeResize", 2f, 0.1f);
     }
@@ -76,19 +77,28 @@ public class ShapeChanger : MonoBehaviour
     {
         if (randomIncrease == 0)
         {
-            if (myTransform.localScale.x < (4f + randomSize) && myTransform.localScale.y < (4f + randomSize))
+            if (myTransform.localScale.x < (4.75f + randomSize) && myTransform.localScale.y < (4.75f + randomSize))
             {
                 myTransform.localScale += new Vector3(0.07f, 0.07f, 0f);
             }
         }
         else
         {
-            if (myTransform.localScale.x > (4f - randomSize) && myTransform.localScale.y > (4f-randomSize))
+            if (myTransform.localScale.x > (4.25f - randomSize) && myTransform.localScale.y > (4.25f-randomSize))
             {
                 myTransform.localScale -= new Vector3(0.07f, 0.07f, 0f);
             }
         }
     }
+
 }
 
-    // 여기에는 다른 필요한 함수 및 로직을 추가할 수 있습니다.
+
+
+
+
+
+
+
+
+

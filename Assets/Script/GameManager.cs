@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject MeteorD;
 
     public TextMeshProUGUI timeText;
-    public float time;
+    public static float time;
 
     private static GameManager instance = null;
 
@@ -71,7 +71,11 @@ public class GameManager : MonoBehaviour
     }
     public void Start()
     {
-        StartCoroutine("StartNextWave");
+        time = 0f;
+        Time.timeScale = 1f;
+
+        StartCoroutine("StartNextWave", 0f);
+
         InvokeRepeating("MakeMeteor", 0f, 0.5f);
     }
 
@@ -107,7 +111,7 @@ public class GameManager : MonoBehaviour
         {
             if(currentSpawnCount == 0)
             {
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(5f);
 
                 if(currentWaveIndex % 10 == 0)
                 {

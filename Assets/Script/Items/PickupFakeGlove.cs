@@ -2,11 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickupFakeGlove : MonoBehaviour
+public class PickupFakeGlove : PickupItems
 {
     private GravityAttractor attractor;
     public string targetTag = "Meteor";
 
+    protected override void OnPickedUp(GameObject receiver)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public AudioClip pickup;
+    public AudioSource audioSource;
 
     private void Start()
     {
@@ -41,7 +48,7 @@ public class PickupFakeGlove : MonoBehaviour
         {
             Destroy(gameObject);
             DeleteObjectsWithTargetTag();
-
+            audioSource.PlayOneShot(pickup);
         }
 
 
@@ -50,5 +57,6 @@ public class PickupFakeGlove : MonoBehaviour
             Destroy(gameObject, 5.0f);
         }
     }
+
 
 }

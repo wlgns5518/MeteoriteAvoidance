@@ -8,8 +8,12 @@ public class PickupShield : PickupItems
 
     protected override void OnPickedUp(GameObject receiver)
     {
-        //gameObject.SetActive(true);
+        throw new System.NotImplementedException();
     }
+
+    public AudioClip pickup;
+    public AudioSource audioSource;
+
 
     private GravityAttractor attractor;
     // Start is called before the first frame update
@@ -30,7 +34,7 @@ public class PickupShield : PickupItems
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-
+            audioSource.PlayOneShot(pickup);
         }
         else
         {
