@@ -1,4 +1,3 @@
 # MeteoriteAvoidance
  
-<img src="https://github.com/wlgns5518/MeteoriteAvoidance/assets/128718414/1bbd8f7a-6008-421a-b354-a7c4b17bd93b">
-
+<img src="https://github.com/wlgns5518/MeteoriteAvoidance/assets/128718414/b9fc04d5-b887-43e5-8221-688a1a2ede88">
