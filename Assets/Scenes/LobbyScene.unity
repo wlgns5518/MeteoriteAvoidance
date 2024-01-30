@@ -410,7 +410,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7609265fe783b4d49819e37ae82935f5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 866c43fddac6f554091568cab5b6ef21, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -543,8 +543,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 400, y: -10}
-  m_SizeDelta: {x: 700, y: 70}
+  m_AnchoredPosition: {x: 500, y: -10}
+  m_SizeDelta: {x: 900, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &265253757
 MonoBehaviour:
@@ -579,7 +579,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC2A4\uD14C\uBBF8\uB098\uB97C \uD68C\uBCF5\uD569\uB2C8\uB2E4."
+  m_Text: "\uC2A4\uD14C\uBBF8\uB098\uC640 \uC57D\uAC04\uC758 \uCCB4\uB825\uB97C \uD68C\uBCF5\uD569\uB2C8\uB2E4."
 --- !u!222 &265253758
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -690,7 +690,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b2c4ac6070c4c5e45bc3aaad17591eea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a549721b94e8db645997c3b46d198927, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1086,7 +1086,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70, y: -170}
+  m_AnchoredPosition: {x: 70, y: -200}
   m_SizeDelta: {x: 1000, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &780662742
@@ -1270,7 +1270,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 80dbe5c5a12830e4c81b66da488dc1e3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ea6f0a9431b56b478e3b8e436ded3f1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1774,7 +1774,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9f2ecd5478612684894f911f71f1e7c7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 34048f2b0e2f25d4e803fc2fa8f85359, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1939,7 +1939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe660f19ec0e46d4eb7df5c79cfe9f04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSettingUI: {fileID: 0}
+  gameSettingUI: {fileID: 368230425}
   mainLobbyUI: {fileID: 1227725622}
 --- !u!1 &1551176432
 GameObject:
