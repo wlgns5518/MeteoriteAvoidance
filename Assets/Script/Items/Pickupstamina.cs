@@ -12,8 +12,8 @@ public class Pickupstamina : PickupItems
 
     private GravityAttractor attractor;
 
-    public AudioClip pickup;
-    public AudioSource audioSource;
+
+
 
     // Start is called before the first frame update
     private void Start()
@@ -32,7 +32,6 @@ public class Pickupstamina : PickupItems
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-            audioSource.PlayOneShot(pickup);
         }
         else
         {

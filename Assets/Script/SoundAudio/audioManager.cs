@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.Burst.Intrinsics.X86;
 
 public class audioManager : MonoBehaviour
 {
     public AudioClip bgmusic;
+
     public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
@@ -14,4 +16,6 @@ public class audioManager : MonoBehaviour
 
 
     }
+
+
 }

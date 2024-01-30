@@ -479,6 +479,12 @@ MonoBehaviour:
   HpBar: {fileID: 196687738}
   StaminaBar: {fileID: 228566202}
   jump: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
+  dash: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
+  pickup: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
+  damaged: {fileID: 8300000, guid: 73bdaf6fa4a24459eb2b7e420333a198, type: 3}
+  bomb: {fileID: 8300000, guid: c819e374608bf43b28237b8d1f9aa1f4, type: 3}
+  hittedshield: {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
+  brokenshield: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
   audioSource: {fileID: 105561112}
 --- !u!58 &105561109
 CircleCollider2D:
@@ -5322,7 +5328,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7003,7 +7009,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1753021243
 MonoBehaviour:
@@ -7344,7 +7350,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
