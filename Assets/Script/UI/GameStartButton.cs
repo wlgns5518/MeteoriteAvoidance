@@ -5,8 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 using System;
+using UnityEngine.EventSystems;
 
-public class GameStartButton : MonoBehaviour
+public class GameStartButton : MonoBehaviour, IPointerEnterHandler
 {
     public AudioClip mouseCensor;
     public AudioClip mouseClick;
@@ -21,4 +22,8 @@ public class GameStartButton : MonoBehaviour
 
     }
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        audioSource.PlayOneShot(mouseCensor);
+    }
 }
