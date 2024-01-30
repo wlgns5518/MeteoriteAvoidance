@@ -1,5 +1,6 @@
 # MeteoriteAvoidance
-<img src="https://github.com/wlgns5518/MeteoriteAvoidance/assets/128718414/faf9e2d7-cda6-41cb-b2b1-199d651fba79"> 
+<img src="https://github.com/wlgns5518/MeteoriteAvoidance/assets/128718414/d5606673-ecc0-407e-8757-ffd1ffdaa6ff"> 
+
 
 <h2 align="center"> 게임 소개 </h2>
 <div align="center">
