@@ -11,7 +11,7 @@ public class Player_GravityBody : MonoBehaviour
     public SpriteRenderer player; //플레이어 스프라이트 변경용
 
     private bool isGrounded; //땅 체크용
-    public float jumpForce = 16f; // 점프 힘 조절용
+    public float jumpForce = 14.5f; // 점프 힘 조절용
     public float jumpCooldown = 0.2f; //점프 쿨타임용1
     private float lastJumpTime;  //점프 쿨타임용2
     public float orbitSpeed = 150f; // 공전 속도 조절용
@@ -20,7 +20,7 @@ public class Player_GravityBody : MonoBehaviour
 
     public float stamina = 70f; //대쉬용 스태미나
     public float maxStamina = 70f; //최대 스태미나
-    public float staminaRegenRate = 0.5f; //초당 스태미나 리젠
+    public float staminaRegenRate = 0.2f; //초당 스태미나 리젠
 
     public float playerHp = 100f; // 플레이어 체력
     public float playerMaxhp = 100f; // 플레이어 최대 체력
@@ -31,6 +31,9 @@ public class Player_GravityBody : MonoBehaviour
 
     public Slider HpBar;
     public Slider StaminaBar;
+
+    public AudioClip jump;
+    public AudioSource audioSource;
 
     private void Start()
     {
@@ -62,9 +65,9 @@ public class Player_GravityBody : MonoBehaviour
         // 쉬프트 키가 눌렸을 때 OrbitAroundAttractor 호출
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetMouseButtonDown(1))
         {
-            if (stamina >= 20)
+            if (stamina >= 24)
             {
-                if (isDashKeyPressed == 0 )      //부드러운 대쉬를 위해.. 연속 호출.. 대쉬 한번당 스태미나 18 소모
+                if (isDashKeyPressed == 0 )      //부드러운 대쉬를 위해.. 연속 호출.. 대쉬 한번당 스태미나 24 소모
                 {
                     Invoke("OrbitAroundAttractorWithShift", 0f);
                     Invoke("OrbitAroundAttractorWithShift", 0.01f);
@@ -116,7 +119,7 @@ public class Player_GravityBody : MonoBehaviour
             }
             else
             {
-                playerHp -= 18;
+                playerHp -= 22;
                 if (playerHp < 0)
                 {
                     playerHp = 0;
@@ -132,13 +135,13 @@ public class Player_GravityBody : MonoBehaviour
 
         if (collision.gameObject.CompareTag("BlueShieldItem"))
         {
-            isShield = 2;
+            isShield += 2;
             player.sprite = shield;
         }
 
         if (collision.gameObject.CompareTag("GreenHealingItem")) //Hp포션 태그 비교 후 플레이어 체력 회복 기능 및 디버그 상으로 회복이 확인되나 즉시 반영안됨 /Item
         {
-            playerHp += 27;
+            playerHp += 32;
             if (playerHp > playerMaxhp)
             {
                 playerHp = playerMaxhp;
@@ -149,12 +152,11 @@ public class Player_GravityBody : MonoBehaviour
         if (collision.gameObject.CompareTag("GreenStaminaItem")) //Sp포션 태그 비교 후 플레이어 기력 회복 기능 및 디버그 상으로 회복이 확인/Item
         {
             stamina += 50;
-
             if (stamina > maxStamina)
             {
                 stamina = maxStamina;
             }
-            playerHp += 5;
+            playerHp += 12;
             if (playerHp > playerMaxhp)
             {
                 playerHp = playerMaxhp;
@@ -182,6 +184,10 @@ public class Player_GravityBody : MonoBehaviour
 
         // 땅에서 떨어짐 판정
         isGrounded = false;
+
+        //점프효과음
+        audioSource.PlayOneShot(jump);
+
     }
 
     void OrbitAroundAttractor(float horizontalInput)
@@ -193,8 +199,8 @@ public class Player_GravityBody : MonoBehaviour
     void OrbitAroundAttractorWithShift()  //대쉬
     {
         float orbitDirection = Mathf.Sign(lastHorizontalInput) * -1;
-        transform.RotateAround(attractor.transform.position, Vector3.forward, orbitDirection * 300 * Time.deltaTime);
-        stamina -= 1.4f;
+        transform.RotateAround(attractor.transform.position, Vector3.forward, orbitDirection * 500 * Time.deltaTime);
+        stamina -= 1.7f;
         if (stamina < 0)
         {
             stamina = 0;

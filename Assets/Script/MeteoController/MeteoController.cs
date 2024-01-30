@@ -11,6 +11,8 @@ public class MeteoController : MonoBehaviour
     private float speed;
     [SerializeField] protected string targetTag;
 
+
+
     protected virtual void Start()
     {
         speed = Random.Range(3, 6);
@@ -37,11 +39,16 @@ public class MeteoController : MonoBehaviour
         // ¹Ù´Ú¿¡ ´êÀ¸¸é isGrounded¸¦ true·Î ¼³Á¤
         if (collision.gameObject.CompareTag("Ground"))
         {
+
             Destroy(gameObject);
+
         }
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
+ 
         }
     }
+
+
 }
