@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MeteorR : MeteoController
 {
-    
+
 
     protected override void Start()
     {
@@ -14,5 +14,4 @@ public class MeteorR : MeteoController
         transform.position = new Vector3(x, y);
     }
 
-    
 }

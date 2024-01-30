@@ -9,6 +9,8 @@ public class GravityAttractor : MonoBehaviour
     public float rotationSpeed = 10f; //회전 속도
     public int rotationDirection = 1; //회전 방향
 
+
+
     public void Start()
     {
         InvokeRepeating("RotateSpeedUp", 0f, 0.1f);
@@ -53,4 +55,7 @@ public class GravityAttractor : MonoBehaviour
             rotationDirection = 1;
         }
     }
+
+
+
 }

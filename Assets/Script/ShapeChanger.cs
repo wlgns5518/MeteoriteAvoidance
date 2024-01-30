@@ -11,6 +11,7 @@ public class ShapeChanger : MonoBehaviour
     private int randomIncrease = 0;  //크기를 증가시킬지 뺼지 결정하는 랜덤인수
     private float randomSize = 0; //크기를 얼마나 증감할지 결정하는 랜덤인수
 
+
     void Start()
     {
         //시작은 Circle
@@ -89,4 +90,15 @@ public class ShapeChanger : MonoBehaviour
             }
         }
     }
+
 }
+
+
+
+
+
+
+
+
+
+
