@@ -66,7 +66,7 @@
 
 ### 아이템 설명
 아이템에 닿으면 효과를 즉시 획득합니다. <br/> 
- - <img src="https://github.com/wlgns5518/MeteoriteAvoidance/assets/128718414/01c154d8-9847-45d9-b19e-3a8e97ac3b42 width="64" height="64"/"> 포션   : HP를 회복합니다.
+ - <img src="https://github.com/wlgns5518/MeteoriteAvoidance/assets/128718414/01c154d8-9847-45d9-b19e-3a8e97ac3b42 width="64" height="64"/> 포션   : HP를 회복합니다.
  - <img src="https://github.com/wlgns5518/MeteoriteAvoidance/assets/128718414/8439b8f7-4b6f-4de1-ba93-d377c60d3f5f"> 건전지 : 스태미나와 약간의 HP를 회복합니다.
  - <img src="https://github.com/wlgns5518/MeteoriteAvoidance/assets/128718414/1647ff6a-4202-455b-b760-ae9ceeaae494"> 쉴드   : 운석의 피격 데미지를 2회 막아줍니다.
  - <img src="https://github.com/wlgns5518/MeteoriteAvoidance/assets/128718414/4cce64c9-5995-4697-bbef-5d7c6943ebef"> 별     : 순간적으로 화면 전체의 운석을 제거합니다.
