@@ -65,6 +65,7 @@
 
 
 ### 아이템 설명
+아이템은 주기적으로 랜덤한 종류의 아이템이 랜덤 위치에 드랍됩니다. <br/> 
 아이템에 닿으면 효과를 즉시 획득합니다. <br/> 
  - <img src="https://github.com/wlgns5518/MeteoriteAvoidance/assets/128718414/01c154d8-9847-45d9-b19e-3a8e97ac3b42.png" width="64" height="64"/> 포션   : HP를 회복합니다.
  - <img src="https://github.com/wlgns5518/MeteoriteAvoidance/assets/128718414/8439b8f7-4b6f-4de1-ba93-d377c60d3f5f.png" width="64" height="64"/> 건전지 : 스태미나와 약간의 HP를 회복합니다.
