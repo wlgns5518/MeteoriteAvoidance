@@ -31,7 +31,8 @@
 <br/> 
 
 ## 게임 설명
-<img src="https://github.com/wlgns5518/MeteoriteAvoidance/assets/128718414/5184c88c-4b59-41c9-b6e2-e1c6a02c379c">  
+<img src="https://github.com/wlgns5518/MeteoriteAvoidance/assets/128718414/5184c88c-4b59-41c9-b6e2-e1c6a02c379c">
+
 <img src="https://github.com/wlgns5518/MeteoriteAvoidance/assets/128718414/a1030ccc-d10f-4928-8ea2-b6d05656a14c"> 
 
 <br/> 
