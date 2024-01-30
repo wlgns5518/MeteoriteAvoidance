@@ -20,13 +20,13 @@ public class GameOverUI : MonoBehaviour
     {
         Time.timeScale = 0f;
         time = GameManager.time;
-        setTimeUI.text = "Time : " +time.ToString("N2");
+        setTimeUI.text = time.ToString("N2");
         bestTime = PlayerPrefs.GetFloat("BestTime");
         if(bestTime < time) 
         { 
             bestTime = time;
             PlayerPrefs.SetFloat("BestTime",bestTime);
 }
-        bestTimeUI.text = "BestTime : "+bestTime.ToString("N2");
+        bestTimeUI.text = bestTime.ToString("N2");
     }
 }
