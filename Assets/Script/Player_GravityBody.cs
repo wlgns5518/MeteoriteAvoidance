@@ -131,7 +131,7 @@ public class Player_GravityBody : MonoBehaviour
             }
             else
             {
-                playerHp -= 22;
+                playerHp -= 20;
                 audioSource.PlayOneShot(damaged); //피격효과음
 
                 if (playerHp < 0)
