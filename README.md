@@ -1,8 +1,6 @@
 # MeteoriteAvoidance
 <img src="https://github.com/wlgns5518/MeteoriteAvoidance/assets/128718414/faf9e2d7-cda6-41cb-b2b1-199d651fba79"> 
 
-<img src=""> 
-
 <h2 align="center"> 게임 소개 </h2>
 <div align="center">
 똥피하기 게임을 스페이스 풍으로 재해석한 게임- [운석 피하기Meteorite Avoidance]입니다!<br/>
