@@ -801,7 +801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcc8d7cb60c36f44ba83ecfc4e43568a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseCensor: {fileID: 0}
+  mouseCensor: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
   mouseClick: {fileID: 8300000, guid: cf6c0e7fbef9449c98a0cdb5ea0c4d9f, type: 3}
   audioSource: {fileID: 875105822}
 --- !u!114 &875105819
@@ -1472,8 +1472,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feb22fe0677fea64aa3e5bfa6c8d37be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseCensor: {fileID: 0}
-  mouseClick: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
+  mouseCensor: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
+  mouseClick: {fileID: 8300000, guid: cf6c0e7fbef9449c98a0cdb5ea0c4d9f, type: 3}
   audioSource: {fileID: 1686552654}
 --- !u!114 &1686552651
 MonoBehaviour:
@@ -1719,7 +1719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bed9b612499487e468922e0a4724bd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseCensor: {fileID: 0}
+  mouseCensor: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
   mouseClick: {fileID: 8300000, guid: cf6c0e7fbef9449c98a0cdb5ea0c4d9f, type: 3}
   audioSource: {fileID: 1842462406}
 --- !u!114 &1842462403
