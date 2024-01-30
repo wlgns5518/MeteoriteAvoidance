@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class GameSettingButton : MonoBehaviour
+public class GameSettingButton : MonoBehaviour, IPointerEnterHandler
 {
     public AudioClip mouseCensor;
     public AudioClip mouseClick;
@@ -16,5 +17,8 @@ public class GameSettingButton : MonoBehaviour
         gameSettingUI.SetActive(true);
         audioSource.PlayOneShot(mouseClick);
     }
-
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        audioSource.PlayOneShot(mouseCensor);
+    }
 }
