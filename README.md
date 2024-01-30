@@ -63,7 +63,8 @@
  - <img src="https://github.com/wlgns5518/MeteoriteAvoidance/assets/128718414/1647ff6a-4202-455b-b760-ae9ceeaae494"> 쉴드   : 운석의 피격 데미지를 2회 막아줍니다.
  - <img src="https://github.com/wlgns5518/MeteoriteAvoidance/assets/128718414/4cce64c9-5995-4697-bbef-5d7c6943ebef"> 별     : 순간적으로 화면 전체의 운석을 제거합니다.
 
-<br/> 
+<br/>
+
 ## 역할 분담
 - 박지훈-씬이동 전반 및 툴팁 & UI & GUI 담당
 - 정현우-플레이어&지구 오브젝트 및 그래픽 담당
@@ -72,6 +73,7 @@
 - 나머지는 공동 작업
 
 <br/> 
+
 ## 프로젝트 구현사항 완료 여부
 -필수 구현 사항
 [구현]    - 게임 화면: 게임을 플레이할 수 있는 화면을 만들어야 합니다. 화면 크기, 배경 등을 설정해야 합니다. 
