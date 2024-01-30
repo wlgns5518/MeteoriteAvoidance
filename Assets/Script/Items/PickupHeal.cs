@@ -11,8 +11,6 @@ public class PickupHeal : PickupItems
 
     }
 
-    public AudioClip pickup;
-    public AudioSource audioSource;
 
     private void Start()
     {
@@ -31,7 +29,6 @@ public class PickupHeal : PickupItems
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-            audioSource.PlayOneShot(pickup);
 
         }
         else

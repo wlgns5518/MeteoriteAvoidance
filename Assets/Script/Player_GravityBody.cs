@@ -34,6 +34,12 @@ public class Player_GravityBody : MonoBehaviour
     public Slider StaminaBar;
 
     public AudioClip jump;
+    public AudioClip dash;
+    public AudioClip pickup;
+    public AudioClip damaged;
+    public AudioClip bomb;
+    public AudioClip hittedshield;
+    public AudioClip brokenshield;
     public AudioSource audioSource;
 
 
@@ -114,16 +120,20 @@ public class Player_GravityBody : MonoBehaviour
             if (isShield >=1)
             {
                 isShield -= 1;
+
                 if (isShield <= 0)
                 {
                     isShield = 0;
                     player.sprite = circle;
                     player.transform.localScale = new Vector3(0.25f, 0.25f, 1);
+                    audioSource.PlayOneShot(brokenshield,1f); //실드파괴효과음
                 }
             }
             else
             {
                 playerHp -= 22;
+                audioSource.PlayOneShot(damaged); //피격효과음
+
                 if (playerHp < 0)
                 {
                     playerHp = 0;
@@ -142,6 +152,7 @@ public class Player_GravityBody : MonoBehaviour
             isShield += 2;
             player.sprite = shield;
             player.transform.localScale = new Vector3(0.5f, 0.5f, 1);
+            audioSource.PlayOneShot(hittedshield); //실드파손효과음
         }
 
         if (collision.gameObject.CompareTag("GreenHealingItem")) //Hp포션 태그 비교 후 플레이어 체력 회복 기능 및 디버그 상으로 회복이 확인되나 즉시 반영안됨 /Item
@@ -150,6 +161,7 @@ public class Player_GravityBody : MonoBehaviour
             if (playerHp > playerMaxhp)
             {
                 playerHp = playerMaxhp;
+                audioSource.PlayOneShot(pickup,1f); //힐링포션습득효과음
             }
             HpBar.value = playerHp / playerMaxhp;
            // Vector3 position = player.transform.position;          
@@ -163,6 +175,7 @@ public class Player_GravityBody : MonoBehaviour
             if (stamina > maxStamina)
             {
                 stamina = maxStamina;
+                audioSource.PlayOneShot(pickup,1f); //기력포션습득효과음
             }
             playerHp += 12;
             if (playerHp > playerMaxhp)
@@ -172,10 +185,18 @@ public class Player_GravityBody : MonoBehaviour
             HpBar.value = playerHp / playerMaxhp;
             StaminaBar.value = stamina / maxStamina;
 
+
+
+
+
             Debug.Log($"현재 SP: {stamina}/{maxStamina}");
         }
 
-        
+        if (collision.gameObject.CompareTag("RedFakeGloveItem"))
+        {
+            audioSource.PlayOneShot(pickup); //징깁습득효과음
+            audioSource.PlayOneShot(bomb, 2f); //폭발음
+        }
 
     }
 
@@ -214,6 +235,9 @@ public class Player_GravityBody : MonoBehaviour
             stamina = 0;
         }
         StaminaBar.value = stamina / maxStamina;
+
+        //대쉬효과음
+        audioSource.PlayOneShot(dash);
     }
 
     void RegenerateStamina() //스태미나 리젠
@@ -228,4 +252,9 @@ public class Player_GravityBody : MonoBehaviour
             stamina = maxStamina;
         }
     }
+
+    //아이템습득시 소리재생
+
+
+
 }
