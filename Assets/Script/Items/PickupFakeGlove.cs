@@ -12,9 +12,6 @@ public class PickupFakeGlove : PickupItems
         throw new System.NotImplementedException();
     }
 
-    public AudioClip pickup;
-    public AudioSource audioSource;
-
     private void Start()
     {
         attractor = FindObjectOfType<GravityAttractor>();
@@ -33,6 +30,7 @@ public class PickupFakeGlove : PickupItems
         // 찾은 모든 GameObject를 순회하며 태그가 일치하는 경우 삭제합니다.
         foreach (GameObject obj in allObjects)
         {
+ 
             if (obj.CompareTag(targetTag))
             {
                 Destroy(obj);
@@ -44,19 +42,16 @@ public class PickupFakeGlove : PickupItems
     // Update is called once per frame
     void OnCollisionEnter2D(Collision2D collision)    //플레이어에 닿았을 시 발동하는 코드
     {
+   
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
             DeleteObjectsWithTargetTag();
-            audioSource.PlayOneShot(pickup);
+            Destroy(gameObject);
         }
-
 
         else
         {
             Destroy(gameObject, 5.0f);
         }
     }
-
-
 }

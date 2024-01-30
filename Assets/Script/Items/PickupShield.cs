@@ -11,8 +11,6 @@ public class PickupShield : PickupItems
         throw new System.NotImplementedException();
     }
 
-    public AudioClip pickup;
-    public AudioSource audioSource;
 
 
     private GravityAttractor attractor;
@@ -34,7 +32,6 @@ public class PickupShield : PickupItems
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-            audioSource.PlayOneShot(pickup);
         }
         else
         {

@@ -6,24 +6,24 @@ using UnityEngine;
 
 public abstract class PickupItems : MonoBehaviour
 {
-    [SerializeField] private bool destroyOnPickup = true;
-    [SerializeField] private LayerMask canBePickupBy;
-    [SerializeField] private AudioClip pickupSound;
+    //[SerializeField] private bool destroyOnPickup = true;
+    //[SerializeField] private LayerMask canBePickupBy;
+    //[SerializeField] private AudioClip pickupSound;
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(canBePickupBy.value == (canBePickupBy.value | (1 << other.gameObject.layer)))
-        {
-            OnPickedUp(other.gameObject);
-            //if (pickupSound)
-            //    SoundManager.PlayClip(pickupSound);
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if(canBePickupBy.value == (canBePickupBy.value | (1 << other.gameObject.layer)))
+    //    {
+    //        OnPickedUp(other.gameObject);
+    //        //if (pickupSound)
+    //        //    SoundManager.PlayClip(pickupSound);
 
-            if (destroyOnPickup)
-            {
-                Destroy(gameObject);
-            }
-        }
-    }
+    //        if (destroyOnPickup)
+    //        {
+    //            Destroy(gameObject);
+    //        }
+    //    }
+    //}
 
     protected abstract void OnPickedUp(GameObject receiver);
 
