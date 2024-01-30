@@ -77,14 +77,14 @@ public class ShapeChanger : MonoBehaviour
     {
         if (randomIncrease == 0)
         {
-            if (myTransform.localScale.x < (5f + randomSize) && myTransform.localScale.y < (5f + randomSize))
+            if (myTransform.localScale.x < (4.75f + randomSize) && myTransform.localScale.y < (4.75f + randomSize))
             {
                 myTransform.localScale += new Vector3(0.07f, 0.07f, 0f);
             }
         }
         else
         {
-            if (myTransform.localScale.x > (5f - randomSize) && myTransform.localScale.y > (5f-randomSize))
+            if (myTransform.localScale.x > (4.25f - randomSize) && myTransform.localScale.y > (4.25f-randomSize))
             {
                 myTransform.localScale -= new Vector3(0.07f, 0.07f, 0f);
             }

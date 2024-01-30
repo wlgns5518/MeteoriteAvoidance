@@ -42,7 +42,7 @@ public class GravityAttractor : MonoBehaviour
 
     public void RotateSpeedUp()
     {
-        rotationSpeed += 0.1f;
+        rotationSpeed += 0.12f;
     }
     public void RotateDirectionChange()
     {
