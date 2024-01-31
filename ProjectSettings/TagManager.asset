@@ -7,6 +7,11 @@ TagManager:
   - Ground
   - blueshielditem
   - shield
+  - Meteor
+  - GreenHealingItem
+  - BlueShieldItem
+  - GreenStaminaItem
+  - RedFakeGloveItem
   layers:
   - Default
   - TransparentFX

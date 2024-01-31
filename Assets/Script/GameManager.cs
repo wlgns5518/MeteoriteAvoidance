@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject blueShieldItem; //쉴드아이템칸
-    public GameObject shield; //캐릭터에 부착한 쉴드칸
+    public GameObject MeteorA;
+    public GameObject MeteorB;
+    public GameObject MeteorC;
+    public GameObject MeteorD;
+
+    public TextMeshProUGUI timeText;
+    public static float time;
 
     private static GameManager instance = null;
 
@@ -30,14 +37,11 @@ public class GameManager : MonoBehaviour
 
 
 
-
-
     void Awake()
     {
         if (null == instance)      //씬 이동 시 해당 씬에 이미 GameManager 오브젝트 인스턴스가 존재할 시 해당씬의 인스턴스는 삭제하고 이 인스턴스를 남긴다
         {
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
         }
         else
         {
@@ -67,21 +71,28 @@ public class GameManager : MonoBehaviour
     }
     public void Start()
     {
-        StartCoroutine("StartNextWave");
+        time = 0f;
+        Time.timeScale = 1f;
 
+        StartCoroutine("StartNextWave", 0f);
+
+        InvokeRepeating("MakeMeteor", 0f, 0.5f);
+    }
+
+    private void Update()
+    {
+        time += Time.deltaTime;
+        timeText.text = time.ToString("N2");
     }
 
 
     private void MakeMeteor()
     {
-
+        Instantiate(MeteorA);
+        Instantiate(MeteorB);
+        Instantiate(MeteorC);
+        Instantiate(MeteorD);
     }
-
-
-
-
-
-
 
 
 
@@ -94,7 +105,7 @@ public class GameManager : MonoBehaviour
         {
             if(currentSpawnCount == 0)
             {
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(5f);
 
                 if(currentWaveIndex % 10 == 0)
                 {
@@ -104,19 +115,23 @@ public class GameManager : MonoBehaviour
 
                 if (currentWaveIndex % 5 == 0)
                 {
-
+                    
                 }
 
                 if(currentWaveIndex % 3 == 0)
                 {
                     waveSpawnCount += 1;
+                    
                 }
 
 
                 if (currentWaveIndex % 5 == 0)
                 {
-                    CreateShield();
+                    CreateReward();
+                    
                 }
+
+               
 
 
 
@@ -142,7 +157,7 @@ public class GameManager : MonoBehaviour
     
 
 
-    void CreateShield() //방패아이템 호출
+    void CreateReward() //아이템 호출
     {
         int idx = Random.Range(0, rewards.Count);
         int posIdx = Random.Range(0, spawnPositions.Count);
@@ -152,10 +167,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void activeshield()
-    {
-        shield.SetActive(true);
-    }
+
 
 
 
